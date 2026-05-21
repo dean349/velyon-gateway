@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/dealer-command-center",
+      "destination": "https://dealer-command-center-ten.vercel.app"
+    },
+    {
+      "source": "/dealer-command-center/:path*",
+      "destination": "https://dealer-command-center-ten.vercel.app/:path*"
+    }
+  ]
+}
