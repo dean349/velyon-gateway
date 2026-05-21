@@ -8,6 +8,14 @@
     {
       "source": "/dealer-command-center/:path*",
       "destination": "https://dealer-command-center-ten.vercel.app/:path*"
+    },
+    {
+      "source": "/nossa-padel-brand-kit",
+      "destination": "https://nossa-padel-brand-kit.vercel.app"
+    },
+    {
+      "source": "/nossa-padel-brand-kit/:path*",
+      "destination": "https://nossa-padel-brand-kit.vercel.app/:path*"
     }
   ]
 }
