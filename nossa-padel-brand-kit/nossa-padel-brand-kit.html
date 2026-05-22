@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOSSA PADEL — Brand Kit & Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --off-white: #F5F4F0;
+    --light-grey: #F0EFEB;
+    --mid-grey: #C8C7C4;
+    --dark-grey: #6B6A67;
+    --text: #1A1916;
+    --accent-blue: #1A4AE8;
+    --accent-green: #1C4A2E;
+    --accent-silver: #9EA3A8;
+    --font-sans: 'Space Grotesk', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--off-white);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── COVER ─────────────────────────────────────── */
+  .cover {
+    background: var(--black);
+    color: var(--white);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: 'NOSSA';
+    position: absolute;
+    font-size: clamp(120px, 22vw, 260px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: rgba(255,255,255,0.04);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .cover-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .cover-logo img { height: 40px; filter: invert(1); }
+  .cover-main {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid-grey);
+    font-family: var(--font-mono);
+  }
+  .cover-title {
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+  .cover-title em { font-style: normal; color: var(--mid-grey); }
+  .cover-subtitle {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    line-height: 1.7;
+  }
+  .cover-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── LAYOUT ─────────────────────────────────────── */
+  .section {
+    padding: 100px 60px;
+    border-bottom: 1px solid var(--mid-grey);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dark-grey);
+    margin-bottom: 12px;
+  }
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--mid-grey);
+    margin-right: 16px;
+  }
+  h2.section-title {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 56px;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  /* ── COLORS ─────────────────────────────────────── */
+  .color-card {
+    border-radius: 0;
+    overflow: hidden;
+    border: 1px solid var(--mid-grey);
+  }
+  .color-swatch {
+    height: 140px;
+    position: relative;
+  }
+  .color-swatch-inner {
+    position: absolute;
+    inset: 0;
+  }
+  .color-info {
+    padding: 16px;
+    background: var(--white);
+  }
+  .color-name {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .color-hex {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--dark-grey);
+  }
+  .color-role {
+    font-size: 11px;
+    color: var(--dark-grey);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ── TYPOGRAPHY ─────────────────────────────────── */
+  .type-specimen {
+    padding: 48px;
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    margin-bottom: 24px;
+  }
+  .type-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dark-grey);
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .type-display {
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+  .type-heading { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+  .type-subheading { font-size: 20px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .type-body { font-size: 16px; font-weight: 400; line-height: 1.7; max-width: 600px; }
+  .type-caption { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark-grey); }
+  .type-mono { font-family: var(--font-mono); font-size: 13px; color: var(--dark-grey); }
+
+  .type-scale {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    overflow: visible; /* allow large glyphs to breathe */
+    border-radius: 4px;
+  }
+  .type-scale-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 100px;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--light-grey);
+    min-height: 72px;  /* keeps rows from collapsing under large samples */
+    overflow: hidden;  /* clip per-row so large glyphs don't bleed into neighbours */
+  }
+  .type-scale-row:last-child { border-bottom: none; }
+  .type-scale-name { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dark-grey); }
+  .type-scale-size { font-family: var(--font-mono); font-size: 10px; color: var(--mid-grey); text-align: right; }
+
+  /* ── LOGO ───────────────────────────────────────── */
+  .logo-demo {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+  }
+  .logo-demo.dark { background: var(--black); }
+  .logo-demo img { max-height: 80px; max-width: 280px; }
+  .logo-demo .logo-label {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dark-grey);
+  }
+  .logo-demo.dark .logo-label { color: rgba(255,255,255,0.3); }
+
+  .logo-anatomy {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    padding: 40px;
+  }
+  .anatomy-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .anatomy-icon { display: flex; align-items: center; justify-content: center; }
+  .anatomy-icon img { width: 80px; }
+  .anatomy-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .anatomy-list li {
+    font-size: 13px;
+    line-height: 1.5;
+    padding-left: 16px;
+    border-left: 2px solid var(--black);
+    color: var(--dark-grey);
+  }
+  .anatomy-list li strong { color: var(--text); display: block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .logo-rule {
+    background: var(--light-grey);
+    border: 1px solid var(--mid-grey);
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .rule-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .rule-text { font-size: 13px; line-height: 1.6; color: var(--dark-grey); }
+  .rule-text strong { color: var(--text); display: block; margin-bottom: 2px; }
+
+  /* ── PHOTOGRAPHY ────────────────────────────────── */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px;
+  }
+  .photo-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+  }
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-card.tall { grid-row: 1 / 3; }
+  .photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 20px 16px 12px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+  .photo-principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .photo-principle {
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+  }
+  .principle-num {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--mid-grey);
+    margin-bottom: 12px;
+  }
+  .principle-title { font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+  .principle-body { font-size: 13px; color: var(--dark-grey); line-height: 1.6; }
+
+  /* ── BUTTONS ────────────────────────────────────── */
+  .component-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    margin-bottom: 16px;
+  }
+  .component-row.dark { background: var(--black); }
+  .btn {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+    transition: all 0.15s ease;
+    border-radius: 0;
+  }
+  .btn-primary { background: var(--black); color: var(--white); border-color: var(--black); }
+  .btn-outline { background: transparent; color: var(--black); border-color: var(--black); }
+  .btn-white { background: var(--white); color: var(--black); border-color: var(--white); }
+  .btn-outline-white { background: transparent; color: var(--white); border-color: var(--white); }
+  .btn-sm { padding: 10px 20px; font-size: 11px; }
+  .btn-lg { padding: 18px 40px; font-size: 13px; }
+
+  /* ── ANNOUNCEMENT BAR ───────────────────────────── */
+  .announcement {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .announcement a { color: var(--white); font-weight: 700; }
+
+  /* ── PRODUCT TILE ───────────────────────────────── */
+  .product-tile {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .product-img {
+    background: var(--light-grey);
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .product-img img {
+    max-height: 200px;
+    max-width: 80%;
+    object-fit: contain;
+  }
+  .product-info { padding: 20px 24px; }
+  .product-cat { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dark-grey); margin-bottom: 6px; }
+  .product-name { font-size: 15px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 12px; }
+  .product-cta { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); display: inline-flex; align-items: center; gap: 8px; }
+  .product-cta::after { content: '→'; }
+
+  /* ── VOICE ──────────────────────────────────────── */
+  .voice-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 40px;
+  }
+  .pillar {
+    background: var(--black);
+    color: var(--white);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pillar:nth-child(even) { background: #111; }
+  .pillar-keyword {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .pillar-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .voice-example {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    padding: 32px 36px;
+    margin-bottom: 16px;
+    position: relative;
+    border-left: 4px solid var(--black);
+  }
+  .voice-quote {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .voice-source {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dark-grey);
+  }
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .do-card, .dont-card {
+    padding: 28px;
+    border: 1px solid var(--mid-grey);
+    background: var(--white);
+  }
+  .do-card { border-top: 4px solid #1C4A2E; }
+  .dont-card { border-top: 4px solid #9B1A1A; }
+  .do-label, .dont-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .do-label { color: #1C4A2E; }
+  .dont-label { color: #9B1A1A; }
+  .dd-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .dd-list li { font-size: 13px; line-height: 1.5; color: var(--dark-grey); padding-left: 14px; border-left: 2px solid var(--mid-grey); }
+
+  /* ── PRODUCT COLOR PALETTE ──────────────────────── */
+  .product-swatch-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .product-swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .ps-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--mid-grey);
+  }
+  .ps-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dark-grey);
+    text-align: center;
+  }
+
+  /* ── SPACING ────────────────────────────────────── */
+  .spacing-demo {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    padding: 40px;
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+  }
+  .sp-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .sp-bar {
+    background: var(--black);
+    width: 36px;
+  }
+  .sp-val {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--dark-grey);
+    text-align: center;
+  }
+
+  /* ── NAV MOCKUP ─────────────────────────────────── */
+  .nav-mockup {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    overflow: hidden;
+  }
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 64px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .nav-link.active { border-bottom: 2px solid var(--black); padding-bottom: 2px; }
+  .nav-logo img { height: 28px; }
+  .nav-utils { display: flex; gap: 20px; align-items: center; }
+  .nav-icon { font-size: 18px; cursor: pointer; }
+
+  /* ── FOOTER ─────────────────────────────────────── */
+  footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 60px;
+    text-align: center;
+  }
+  footer .footer-logo img { height: 36px; filter: invert(1); margin-bottom: 24px; }
+  footer .footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); font-family: var(--font-mono); letter-spacing: 0.08em; }
+
+  /* ── DIVIDER ────────────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: var(--mid-grey);
+    margin: 56px 0;
+  }
+  .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  /* ── TABLET (≤900px) ─────────────────────────────── */
+  @media (max-width: 900px) {
+    .section { padding: 60px 24px; }
+    .cover { padding: 32px 24px; }
+    .grid-2, .grid-3, .grid-4, .photo-grid, .voice-pillars,
+    .photo-principles, .do-dont { grid-template-columns: 1fr; }
+    .photo-card.tall { grid-row: auto; }
+    .photo-card img { height: 260px !important; }
+
+    /* type scale rows — stack label/size below sample */
+    .type-scale-row {
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 8px 16px;
+    }
+    .type-scale-row .type-scale-name { grid-column: 1; grid-row: 2; }
+    .type-scale-row .type-scale-size { grid-column: 2; grid-row: 2; text-align: right; }
+    .type-scale-row > *:first-child + * { grid-column: 1 / -1; grid-row: 1; }
+
+    /* logo anatomy */
+    .anatomy-grid { grid-template-columns: 80px 1fr; gap: 20px; }
+    .anatomy-icon img { width: 60px; }
+
+    /* nav mockup — hide nav links, shrink */
+    .nav-bar { padding: 0 20px; }
+    .nav-links { display: none; }
+
+    /* spacing demo — allow wrap */
+    .spacing-demo { flex-wrap: wrap; gap: 16px; }
+
+    /* colophon grid */
+    .logo-demo { padding: 40px 24px; }
+
+    /* component rows */
+    .component-row { flex-wrap: wrap; gap: 12px; padding: 24px; }
+
+    /* product swatch row */
+    .product-swatch-row { gap: 12px; }
+    .ps-circle { width: 44px; height: 44px; }
+
+    /* voice examples */
+    .voice-example { padding: 24px 20px; }
+    .voice-quote { font-size: 16px; }
+  }
+
+  /* ── MOBILE (≤480px) ─────────────────────────────── */
+  @media (max-width: 480px) {
+    .section { padding: 48px 16px; }
+    .cover { padding: 28px 16px; min-height: auto; }
+    .cover-title { font-size: clamp(36px, 12vw, 60px); }
+    .cover-subtitle { font-size: 14px; }
+    .cover-meta { flex-direction: column; gap: 8px; }
+    h2.section-title { font-size: clamp(26px, 7vw, 38px); margin-bottom: 32px; }
+
+    /* type specimens */
+    .type-specimen { padding: 28px 20px; }
+    .type-display { font-size: clamp(36px, 10vw, 56px); }
+    .type-label { flex-direction: column; gap: 4px; font-size: 9px; }
+
+    /* type scale — single column, hide size */
+    .type-scale-row {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      gap: 4px;
+      padding: 16px 20px;
+    }
+    .type-scale-row .type-scale-name { grid-row: 1; }
+    .type-scale-row > *:first-child + * { font-size: clamp(18px, 5vw, 32px) !important; }
+    .type-scale-row .type-scale-size { display: none; }
+
+    /* color cards — 2 columns */
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .color-swatch { height: 100px; }
+    .color-info { padding: 12px; }
+    .color-name { font-size: 11px; }
+
+    /* logo system */
+    .logo-demo { padding: 32px 16px; }
+    .logo-demo img { max-height: 52px; }
+    .anatomy-grid { grid-template-columns: 1fr; }
+    .anatomy-icon { justify-content: flex-start; margin-bottom: 8px; }
+    .logo-rule { padding: 16px 20px; gap: 12px; }
+
+    /* nav mockup — just show bar */
+    .nav-bar { height: 52px; padding: 0 16px; }
+    .nav-logo img { height: 22px; }
+    .nav-utils { gap: 14px; }
+
+    /* buttons */
+    .component-row { padding: 20px 16px; gap: 10px; }
+    .btn { padding: 12px 20px; font-size: 11px; }
+    .btn-lg { padding: 14px 24px; font-size: 12px; }
+
+    /* product tiles */
+    .product-img { height: 200px; }
+    .product-info { padding: 16px 18px; }
+
+    /* spacing demo */
+    .spacing-demo { padding: 24px 16px; gap: 12px; }
+    .sp-bar { width: 28px; }
+
+    /* photography */
+    .photo-card img { height: 220px !important; }
+    .photo-principles { grid-template-columns: 1fr; }
+
+    /* voice */
+    .voice-pillars { gap: 2px; }
+    .pillar { padding: 24px 18px; }
+    .pillar-keyword { font-size: 18px; }
+    .do-dont { grid-template-columns: 1fr; }
+    .do-card, .dont-card { padding: 20px 18px; }
+
+    /* product hierarchy */
+    .product-swatch-row { flex-wrap: wrap; gap: 10px; }
+
+    /* footer */
+    footer { padding: 40px 16px; }
+    footer .footer-logo img { height: 28px; }
+
+    /* colophon */
+    .logo-anatomy { padding: 24px 16px; }
+  }
+
+  /* ── HORIZONTAL SCROLL WRAPPERS ────────────────────── */
+  .scroll-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* hide native bottom scrollbar — replaced by custom track above */
+    scrollbar-width: none;
+  }
+  .scroll-x::-webkit-scrollbar { display: none; }
+
+  /* custom scroll track (rendered above each wide section by JS) */
+  .scroll-track {
+    position: relative;
+    height: 6px;
+    background: #E8E7E3;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    display: none; /* JS shows it only when content overflows */
+  }
+  .scroll-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-width: 44px;
+    background: #1A1916;
+    border-radius: 3px;
+    cursor: grab;
+    transition: background 0.15s;
+  }
+  .scroll-thumb:hover  { background: #333; }
+  .scroll-thumb:active { background: #000; cursor: grabbing; }
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-logo">
+    <img src="assets/nossa-logo-full-black-horizontal.png" alt="Nossa Padel">
+  </div>
+  <div class="cover-main">
+    <span class="cover-eyebrow">Nossa Padel · Brand Identity System</span>
+    <h1 class="cover-title">Brand Kit<br><em>&amp; Style Guide</em></h1>
+    <p class="cover-subtitle">A complete reference for the NOSSA visual identity — colours, typography, logo usage, photography direction, and voice guidelines.</p>
+  </div>
+  <div class="cover-meta">
+    <span>Version 1.0 · 2026</span>
+    <span>nossapadel.com</span>
+  </div>
+</div>
+
+<!-- ══ 01 · BRAND FOUNDATION ══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="section-num">01</span>Brand Foundation</div>
+  <h2 class="section-title">Who We Are</h2>
+  <div class="grid-2">
+    <div>
+      <div class="tag">Mission</div>
+      <p style="font-size:20px;font-weight:600;line-height:1.4;letter-spacing:-0.01em;margin-bottom:24px;">"We stripped away the noise. Durable materials, balanced design, and a racket that feels right from day one."</p>
+      <p style="font-size:14px;color:var(--dark-grey);line-height:1.7;">NOSSA was founded on the belief that the padel market was overcrowded with confusion. We exist to make premium padel equipment accessible, beautiful, and honest — built around community, not hype.</p>
+    </div>
+    <div>
+      <div class="tag">Name Meaning</div>
+      <p style="font-size:20px;font-weight:600;line-height:1.4;letter-spacing:-0.01em;margin-bottom:24px;">"In Portuguese, NOSSA means <em style="font-style:italic;color:var(--dark-grey)">ours.</em>"</p>
+      <p style="font-size:14px;color:var(--dark-grey);line-height:1.7;">Padel is a game built for four, where anyone can join, everyone belongs, and new friendships are made every week. The name anchors the brand in community, inclusivity, and shared experience.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div style="padding:32px;background:var(--white);border:1px solid var(--mid-grey);">
+      <div class="tag">Positioning</div>
+      <p style="font-weight:700;font-size:15px;margin-top:8px;margin-bottom:10px;letter-spacing:0.02em;text-transform:uppercase;">Premium without pretension</p>
+      <p style="font-size:13px;color:var(--dark-grey);line-height:1.6;">High-end equipment at an honest price. Quality-led, community-first.</p>
+    </div>
+    <div style="padding:32px;background:var(--white);border:1px solid var(--mid-grey);">
+      <div class="tag">Heritage</div>
+      <p style="font-weight:700;font-size:15px;margin-top:8px;margin-bottom:10px;letter-spacing:0.02em;text-transform:uppercase;">Portuguese roots</p>
+      <p style="font-size:13px;color:var(--dark-grey);line-height:1.6;">Inspired by Iberian culture — warmth, community, passion for sport.</p>
+    </div>
+    <div style="padding:32px;background:var(--white);border:1px solid var(--mid-grey);">
+      <div class="tag">Promise</div>
+      <p style="font-weight:700;font-size:15px;margin-top:8px;margin-bottom:10px;letter-spacing:0.02em;text-transform:uppercase;">Feel right from day one</p>
+      <p style="font-size:13px;color:var(--dark-grey);line-height:1.6;">Months of R&D, 12K carbon, feel-first design. No gimmicks. Just quality.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 02 · COLOUR PALETTE ════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="section-num">02</span>Colour Palette</div>
+  <h2 class="section-title">Colours</h2>
+
+  <div class="tag">Core Palette</div>
+  <div class="grid-4" style="margin-bottom:32px;margin-top:16px;">
+    <div class="color-card">
+      <div class="color-swatch"><div class="color-swatch-inner" style="background:#000000;"></div></div>
+      <div class="color-info">
+        <div class="color-name">NOSSA Black</div>
+        <div class="color-hex">#000000</div>
+        <div class="color-role">Primary — Logo, headings, primary buttons, announcement bar</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch"><div class="color-swatch-inner" style="background:#FFFFFF;border:1px solid #E5E5E5;"></div></div>
+      <div class="color-info">
+        <div class="color-name">Pure White</div>
+        <div class="color-hex">#FFFFFF</div>
+        <div class="color-role">Primary — Main page background, reversed text</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch"><div class="color-swatch-inner" style="background:#F5F4F0;"></div></div>
+      <div class="color-info">
+        <div class="color-name">Off-White</div>
+        <div class="color-hex">#F5F4F0</div>
+        <div class="color-role">Secondary — Section backgrounds, product card fills</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch"><div class="color-swatch-inner" style="background:#1A1916;"></div></div>
+      <div class="color-info">
+        <div class="color-name">Ink</div>
+        <div class="color-hex">#1A1916</div>
+        <div class="color-role">Secondary — Body text (softened black)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tag">Neutral System</div>
+  <div class="grid-4" style="margin-bottom:32px;margin-top:16px;">
+    <div class="color-card">
+      <div class="color-swatch"><div class="color-swatch-inner" style="background:#F0EFEB;"></div></div>
+      <div class="color-info">
+        <div class="color-name">Light Grey</div>
+        <div class="color-hex">#F0EFEB</div>
+        <div class="color-role">Borders, dividers, subtle fills</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch"><div class="color-swatch-inner" style="background:#C8C7C4;"></div></div>
+      <div class="color-info">
+        <div class="color-name">Mid Grey</div>
+        <div class="color-hex">#C8C7C4</div>
+        <div class="color-role">Borders, disabled states, metadata</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch"><div class="color-swatch-inner" style="background:#9EA3A8;"></div></div>
+      <div class="color-info">
+        <div class="color-name">Silver</div>
+        <div class="color-hex">#9EA3A8</div>
+        <div class="color-role">Placeholder text, secondary icons</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch"><div class="color-swatch-inner" style="background:#6B6A67;"></div></div>
+      <div class="color-info">
+        <div class="color-name">Stone</div>
+        <div class="color-hex">#6B6A67</div>
+        <div class="color-role">Body copy, captions, supporting text</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tag">Product Accent Colours</div>
+  <p style="font-size:13px;color:var(--dark-grey);margin:12px 0 24px;">Used exclusively on product surfaces (racket faces, bags). Never as primary UI colours.</p>
+  <div class="product-swatch-row">
+    <div class="product-swatch">
+      <div class="ps-circle" style="background:#1A4AE8;"></div>
+      <div class="ps-label">Velocity Blue<br>#1A4AE8</div>
+    </div>
+    <div class="product-swatch">
+      <div class="ps-circle" style="background:#1C4A2E;border-color:#1C4A2E;"></div>
+      <div class="ps-label">Court Green<br>#1C4A2E</div>
+    </div>
+    <div class="product-swatch">
+      <div class="ps-circle" style="background:#F5F4F0;"></div>
+      <div class="ps-label">Chalk White<br>#F5F4F0</div>
+    </div>
+    <div class="product-swatch">
+      <div class="ps-circle" style="background:#2A2A2A;border-color:#444;"></div>
+      <div class="ps-label">Carbon Black<br>#2A2A2A</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 03 · TYPOGRAPHY ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="section-num">03</span>Typography</div>
+  <h2 class="section-title">Type System</h2>
+
+  <div class="type-specimen" style="margin-bottom:4px;">
+    <div class="type-label">
+      <span>Primary Typeface — Space Grotesk</span>
+      <span>Headings · UI · Body</span>
+    </div>
+    <div class="type-display" style="margin-bottom:16px;">NOSSA PADEL</div>
+    <div class="type-heading" style="margin-bottom:12px;">The Social Sport</div>
+    <p class="type-body">Padel isn't just a sport. It's a lifestyle, a social circle — built for four, where anyone can join and everyone belongs.</p>
+  </div>
+  <div class="type-specimen">
+    <div class="type-label">
+      <span>Secondary Typeface — Space Mono</span>
+      <span>Labels · Metadata · Code</span>
+    </div>
+    <div class="type-mono" style="font-size:15px;line-height:2;">PRODUCT · NOSSA CORE · 12K CARBON · SKU-001<br>01 — COLOUR PALETTE · VERSION 1.0 · 2026</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="tag">Type Scale</div>
+  <div class="scroll-x" style="margin-top:16px;"><div class="type-scale" style="min-width:520px;">
+    <div class="type-scale-row" style="padding:28px 28px;">
+      <span class="type-scale-name">Display</span>
+      <span style="font-size:52px;font-weight:700;letter-spacing:-0.03em;line-height:1.1;display:block;">NOSSA</span>
+      <span class="type-scale-size">52–96px / 700</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-name">H1</span>
+      <span style="font-size:36px;font-weight:700;letter-spacing:-0.02em;display:block;">The Social Sport</span>
+      <span class="type-scale-size">36px / 700</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-name">H2</span>
+      <span style="font-size:28px;font-weight:700;letter-spacing:-0.01em;">NOSSA CORE Racket</span>
+      <span class="type-scale-size">28px / 700</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-name">H3 / Label</span>
+      <span class="type-subheading">Shop the collection</span>
+      <span class="type-scale-size">14–16px / 600 / UC</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-name">Body</span>
+      <span class="type-body" style="max-width:none;">Quality-led. Community-first. Feel right from day one.</span>
+      <span class="type-scale-size">16px / 400</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-scale-name">Caption</span>
+      <span class="type-caption">Product · NOSSA Core · SKU-001</span>
+      <span class="type-scale-size">11–12px / UC / tracked</span>
+    </div>
+  </div></div>
+</div>
+
+<!-- ══ 04 · LOGO SYSTEM ═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="section-num">04</span>Logo System</div>
+  <h2 class="section-title">Logo &amp; Mark</h2>
+
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="logo-demo">
+      <img src="assets/nossa-logo-full-black-horizontal.png" alt="NOSSA Padel Logo — Black">
+      <span class="logo-label">Full Lockup — Light Background</span>
+    </div>
+    <div class="logo-demo dark">
+      <img src="assets/nossa-logo-full-black-horizontal.png" alt="NOSSA Padel Logo — White" style="filter:invert(1);">
+      <span class="logo-label">Full Lockup — Dark Background</span>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-bottom:40px;">
+    <div class="logo-demo" style="padding:40px;">
+      <img src="assets/nossa-icon-symbol-black-large.png" alt="NOSSA Icon — Black" style="height:100px;width:auto;">
+      <span class="logo-label">Icon Mark — Light Background</span>
+    </div>
+    <div class="logo-demo dark" style="padding:40px;">
+      <img src="assets/nossa-icon-symbol-black-large.png" alt="NOSSA Icon — White" style="height:100px;width:auto;filter:invert(1);">
+      <span class="logo-label">Icon Mark — Dark Background</span>
+    </div>
+  </div>
+
+  <div class="logo-anatomy" style="margin-bottom:24px;">
+    <p class="type-label" style="border-bottom:1px solid var(--light-grey);padding-bottom:12px;margin-bottom:28px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dark-grey);">Logo Anatomy</p>
+    <div class="anatomy-grid">
+      <div class="anatomy-icon">
+        <img src="assets/nossa-icon-symbol-black-large.png" alt="NOSSA Symbol">
+      </div>
+      <ul class="anatomy-list">
+        <li><strong>The Mark</strong>An abstract figure in motion — three crescent-arc forms suggesting a padel player mid-swing, with a circular form at the apex representing the ball. Conveys kinetics, precision, and humanity.</li>
+        <li><strong>The Wordmark</strong>"NOSSA" set in a bold, geometric sans-serif with custom letterforms. The triangular 'A' (no crossbar) reinforces the angular, modern aesthetic. Always uppercase.</li>
+        <li><strong>Composition</strong>Mark leads left, wordmark follows right. Clear-space equal to the height of the 'N' on all sides. Never rearrange.</li>
+        <li><strong>Colourways</strong>Black on white. White on black. Single-colour only — no gradients, outlines, or drop shadows on the logo.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="scroll-x"><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;min-width:540px;">
+    <div class="logo-rule">
+      <span class="rule-icon">✓</span>
+      <div class="rule-text"><strong>Do: Maintain clear space</strong>Always preserve a minimum clear zone equal to the cap-height of 'N' around the full logo.</div>
+    </div>
+    <div class="logo-rule">
+      <span class="rule-icon">✓</span>
+      <div class="rule-text"><strong>Do: Use approved colourways only</strong>Black on white/light, or white on black/dark. No colour logos.</div>
+    </div>
+    <div class="logo-rule" style="background:var(--white);border-top:3px solid #9B1A1A;">
+      <span class="rule-icon">✗</span>
+      <div class="rule-text"><strong>Don't: Stretch, rotate, or recolour</strong>Never alter proportions, add effects, use product accent colours, or place on busy backgrounds.</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ══ 05 · UI COMPONENTS ════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="section-num">05</span>UI Components</div>
+  <h2 class="section-title">Design Language</h2>
+
+  <div class="tag" style="margin-bottom:12px;">Navigation</div>
+  <div class="scroll-x" style="margin-bottom:32px;"><div class="nav-mockup" style="min-width:560px;">
+    <div style="background:var(--black);color:var(--white);text-align:center;padding:10px;font-size:11px;letter-spacing:0.1em;font-weight:500;">Join the NOSSA Community free. Get 10% off. Valid 48 hours. →</div>
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a class="nav-link" href="#">Shop</a>
+        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="#">NOSSA Community</a>
+      </div>
+      <div class="nav-logo"><img src="assets/nossa-logo-full-black-horizontal.png" alt="NOSSA"></div>
+      <div class="nav-utils">
+        <span class="nav-icon">🔍</span>
+        <span class="nav-icon">👤</span>
+        <span class="nav-icon">🛒</span>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="tag" style="margin-bottom:12px;">Buttons</div>
+  <div class="scroll-x"><div class="component-row" style="margin-bottom:4px;min-width:480px;">
+    <button class="btn btn-primary">Shop Now</button>
+    <button class="btn btn-outline">View All</button>
+    <button class="btn btn-primary btn-sm">Add to Cart</button>
+    <button class="btn btn-outline btn-sm">Learn More</button>
+    <button class="btn btn-primary btn-lg">Join Community</button>
+  </div></div>
+  <div class="scroll-x" style="margin-bottom:32px;"><div class="component-row dark" style="min-width:480px;">
+    <button class="btn btn-white">Shop Now</button>
+    <button class="btn btn-outline-white">View All</button>
+    <button class="btn btn-white btn-sm">Add to Cart</button>
+    <button class="btn btn-outline-white btn-sm">Learn More</button>
+  </div></div>
+
+  <div class="tag" style="margin-bottom:12px;">Product Tiles</div>
+  <div class="grid-3">
+    <div class="product-tile">
+      <div class="product-img">
+        <img src="assets/nossa-base-racket-white-product-shot.jpg" alt="NOSSA Base">
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Rackets</div>
+        <div class="product-name">NOSSA Base</div>
+        <span class="product-cta">Shop</span>
+      </div>
+    </div>
+    <div class="product-tile">
+      <div class="product-img" style="background:#1A1916;">
+        <img src="assets/nossa-core-racket-black-thumbnail.jpg" alt="NOSSA Core" style="max-height:160px;">
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Rackets</div>
+        <div class="product-name">NOSSA Core</div>
+        <span class="product-cta">Shop</span>
+      </div>
+    </div>
+    <div class="product-tile">
+      <div class="product-img">
+        <img src="assets/nossa-hybrid-carry-bag-black-hero.jpg" alt="NOSSA Hybrid">
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Bags</div>
+        <div class="product-name">NOSSA Hybrid</div>
+        <span class="product-cta">Shop</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="tag" style="margin-bottom:16px;">Spacing Scale</div>
+  <div class="scroll-x"><div class="spacing-demo" style="min-width:560px;">
+    <div class="sp-block"><div class="sp-bar" style="height:4px;"></div><div class="sp-val">4<br>xs</div></div>
+    <div class="sp-block"><div class="sp-bar" style="height:8px;"></div><div class="sp-val">8<br>sm</div></div>
+    <div class="sp-block"><div class="sp-bar" style="height:16px;"></div><div class="sp-val">16<br>md</div></div>
+    <div class="sp-block"><div class="sp-bar" style="height:24px;"></div><div class="sp-val">24<br>lg</div></div>
+    <div class="sp-block"><div class="sp-bar" style="height:32px;"></div><div class="sp-val">32<br>xl</div></div>
+    <div class="sp-block"><div class="sp-bar" style="height:48px;"></div><div class="sp-val">48<br>2xl</div></div>
+    <div class="sp-block"><div class="sp-bar" style="height:60px;"></div><div class="sp-val">60<br>3xl</div></div>
+    <div class="sp-block"><div class="sp-bar" style="height:80px;"></div><div class="sp-val">80<br>4xl</div></div>
+    <div class="sp-block"><div class="sp-bar" style="height:100px;"></div><div class="sp-val">100<br>section</div></div>
+  </div></div>
+  <p style="font-size:12px;color:var(--dark-grey);margin-top:12px;font-family:var(--font-mono);letter-spacing:0.05em;">All values in pixels. Grid gap: 24px standard, 4px for photo mosaics. Section padding: 100px vertical / 60px horizontal.</p>
+</div>
+
+<!-- ══ 06 · PHOTOGRAPHY ═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="section-num">06</span>Photography</div>
+  <h2 class="section-title">Imagery Direction</h2>
+
+  <div class="photo-grid" style="margin-bottom:32px;">
+    <div class="photo-card tall">
+      <img src="assets/nossa-padel-rackets-blue-green-duo-studio-square.jpg" alt="Studio — Cinematic Dark" style="height:520px;object-position:center;">
+      <div class="photo-caption">Style 1 — Cinematic Dark Studio</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/nossa-padel-rackets-white-black-duo-studio-square.jpg" alt="Studio — White/Black" style="height:258px;">
+      <div class="photo-caption">Style 2 — Neutral Studio</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/nossa-hybrid-carry-bag-black-hero.jpg" alt="Product Hero" style="height:258px;">
+      <div class="photo-caption">Style 3 — Product Hero</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/nossa-base-bundle-blue-racket-bag-accessories.png" alt="Bundle" style="height:258px;background:var(--off-white);">
+      <div class="photo-caption">Style 4 — Bundle / E-commerce</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/nossa-player-holding-core-racket-outdoor-court-thumbnail-800.jpg" alt="Lifestyle" style="height:258px;">
+      <div class="photo-caption">Style 5 — Lifestyle / On Court</div>
+    </div>
+  </div>
+
+  <div class="photo-principles">
+    <div class="photo-principle">
+      <div class="principle-num">01</div>
+      <div class="principle-title">Cinematic Dark Studio</div>
+      <div class="principle-body">Products photographed against near-black backgrounds with dramatic controlled lighting. Reveals texture, carbon weave, and material quality. High contrast. No props. Used for hero and editorial contexts.</div>
+    </div>
+    <div class="photo-principle">
+      <div class="principle-num">02</div>
+      <div class="principle-title">Neutral Studio</div>
+      <div class="principle-body">Clean off-white or light grey studio. Product-centred compositions. Used for product listings, PDPs, and bundles. Square or portrait format. No distractions — let the design speak.</div>
+    </div>
+    <div class="photo-principle">
+      <div class="principle-num">03</div>
+      <div class="principle-title">Lifestyle / On Court</div>
+      <div class="principle-body">Natural outdoor court settings. Player in motion or at rest. Authentic — not staged. Documentary feel. Used for social media, brand pages, and community content. Green court tones complement brand accent palette.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 07 · VOICE & TONE ══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label"><span class="section-num">07</span>Voice &amp; Tone</div>
+  <h2 class="section-title">How We Speak</h2>
+
+  <div class="voice-pillars">
+    <div class="pillar">
+      <div class="pillar-keyword">Direct</div>
+      <div class="pillar-desc">We say what we mean. No filler, no buzzwords. Every word earns its place.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-keyword">Confident</div>
+      <div class="pillar-desc">We know what we've built and why. We don't hedge. We don't oversell.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-keyword">Warm</div>
+      <div class="pillar-desc">Community comes first. We're welcoming without being informal. Inclusive without being preachy.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-keyword">Honest</div>
+      <div class="pillar-desc">We launched with one racket because we wanted to get it right. We don't pretend to be something we're not.</div>
+    </div>
+  </div>
+
+  <div class="voice-example">
+    <div class="voice-quote">"We saw the problem. So we solved it."</div>
+    <div class="voice-source">About Us Page — Opening line</div>
+  </div>
+  <div class="voice-example">
+    <div class="voice-quote">"Months of development. Dozens of test rackets. 12K carbon, balanced distribution, and feel-first design. We didn't want loud. We wanted confidence."</div>
+    <div class="voice-source">About Us Page — Work Behind It section</div>
+  </div>
+  <div class="voice-example">
+    <div class="voice-quote">"Padel isn't just a sport. It's a lifestyle, a social circle — built for four, where anyone can join, everyone belongs, and new friendships are made every week."</div>
+    <div class="voice-source">Homepage hero copy</div>
+  </div>
+
+  <div class="do-dont">
+    <div class="do-card">
+      <div class="do-label">✓ Do Write Like This</div>
+      <ul class="dd-list">
+        <li>Short, punchy sentences. Impact first.</li>
+        <li>Use "we" and "you" — speak human to human</li>
+        <li>Lead with the benefit, back with the proof</li>
+        <li>Use specific details: "12K carbon", "months of R&D"</li>
+        <li>Community is a genuine word for us — use it</li>
+        <li>Reference Portuguese heritage when authentic</li>
+      </ul>
+    </div>
+    <div class="dont-card">
+      <div class="dont-label">✗ Never Write Like This</div>
+      <ul class="dd-list">
+        <li>"Revolutionising the game" — empty claim</li>
+        <li>Jargon overload aimed at confusing players</li>
+        <li>Passive voice — "this racket has been designed to..."</li>
+        <li>Price-led messaging as the primary value prop</li>
+        <li>Over-promising performance claims you can't back</li>
+        <li>Formal corporate language — we're a community brand</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 08 · PRODUCT RANGE ═════════════════════════════════════════ -->
+<div class="section" style="border-bottom:none;">
+  <div class="section-label"><span class="section-num">08</span>Product Hierarchy</div>
+  <h2 class="section-title">The Range</h2>
+  <div class="grid-3" style="margin-bottom:40px;">
+    <div style="padding:36px;background:var(--black);color:var(--white);">
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.25em;color:rgba(255,255,255,0.4);margin-bottom:16px;text-transform:uppercase;">Tier 01 — Flagship</div>
+      <div style="font-size:28px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;">NOSSA CORE</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;">12K carbon frame. Feel-first design. The racket NOSSA launched with — because it had to be right first.</div>
+    </div>
+    <div style="padding:36px;background:var(--white);border:1px solid var(--mid-grey);">
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.25em;color:var(--dark-grey);margin-bottom:16px;text-transform:uppercase;">Tier 02 — Entry</div>
+      <div style="font-size:28px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;">NOSSA BASE</div>
+      <div style="font-size:13px;color:var(--dark-grey);line-height:1.6;">Balanced performance for new players. Available in Velocity Blue and Court Green. The accessible entry point to the NOSSA family.</div>
+    </div>
+    <div style="padding:36px;background:var(--off-white);border:1px solid var(--mid-grey);">
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.25em;color:var(--dark-grey);margin-bottom:16px;text-transform:uppercase;">Tier 03 — Accessories</div>
+      <div style="font-size:28px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;">NOSSA HYBRID</div>
+      <div style="font-size:13px;color:var(--dark-grey);line-height:1.6;">Premium carry bag, sleeve, overgrips, carbon frame protector, carabiner clip, sweat towel. The complete NOSSA kit.</div>
+    </div>
+  </div>
+
+  <div class="tag" style="margin-bottom:16px;">Brand Colophon</div>
+  <div style="padding:40px;background:var(--white);border:1px solid var(--mid-grey);display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;">
+    <div>
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dark-grey);margin-bottom:8px;">Primary Typeface</div>
+      <div style="font-weight:700;">Space Grotesk</div>
+      <div style="font-size:12px;color:var(--dark-grey);">Google Fonts — Free</div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dark-grey);margin-bottom:8px;">Mono Typeface</div>
+      <div style="font-weight:700;">Space Mono</div>
+      <div style="font-size:12px;color:var(--dark-grey);">Google Fonts — Free</div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dark-grey);margin-bottom:8px;">E-commerce Platform</div>
+      <div style="font-weight:700;">Shopify</div>
+      <div style="font-size:12px;color:var(--dark-grey);">nossapadel.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">
+    <img src="assets/nossa-logo-full-black-horizontal.png" alt="NOSSA Padel">
+  </div>
+  <div class="footer-copy">Brand Kit &amp; Style Guide · Version 1.0 · 2026 · Nossa Padel Ltd</div>
+</footer>
+
+<script>
+// Custom always-visible top scrollbar for .scroll-x wrappers
+(function () {
+  function initScrollTrack(scrollEl) {
+    var track = document.createElement('div');
+    track.className = 'scroll-track';
+    var thumb = document.createElement('div');
+    thumb.className = 'scroll-thumb';
+    track.appendChild(thumb);
+    scrollEl.parentNode.insertBefore(track, scrollEl);
+
+    function update() {
+      var ratio = scrollEl.clientWidth / scrollEl.scrollWidth;
+      if (ratio >= 0.99) { track.style.display = 'none'; return; }
+      track.style.display = 'block';
+      var thumbW = Math.max(ratio * track.offsetWidth, 44);
+      var maxScroll = scrollEl.scrollWidth - scrollEl.clientWidth;
+      var scrollFrac = maxScroll > 0 ? scrollEl.scrollLeft / maxScroll : 0;
+      var maxLeft = track.offsetWidth - thumbW;
+      thumb.style.width = thumbW + 'px';
+      thumb.style.transform = 'translateX(' + (scrollFrac * maxLeft) + 'px)';
+    }
+
+    scrollEl.addEventListener('scroll', update);
+    window.addEventListener('resize', update);
+    // Run after images/fonts load so scrollWidth is accurate
+    window.addEventListener('load', update);
+    update();
+
+    // ── drag on thumb ────────────────────────────────────
+    function startDrag(e) {
+      var isTouch = e.touches;
+      var startClientX = isTouch ? e.touches[0].clientX : e.clientX;
+      var startScrollLeft = scrollEl.scrollLeft;
+      var thumbW = thumb.offsetWidth;
+      var maxScroll = scrollEl.scrollWidth - scrollEl.clientWidth;
+      var maxLeft = track.offsetWidth - thumbW;
+
+      function onMove(e) {
+        var x = e.touches ? e.touches[0].clientX : e.clientX;
+        var delta = x - startClientX;
+        scrollEl.scrollLeft = Math.max(0, Math.min(maxScroll,
+          startScrollLeft + (delta / maxLeft) * maxScroll));
+      }
+      function onEnd() {
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onEnd);
+        document.removeEventListener('touchmove', onMove);
+        document.removeEventListener('touchend', onEnd);
+      }
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onEnd);
+      document.addEventListener('touchmove', onMove, { passive: true });
+      document.addEventListener('touchend', onEnd);
+    }
+    thumb.addEventListener('mousedown', startDrag);
+    thumb.addEventListener('touchstart', startDrag, { passive: true });
+
+    // ── click on track to jump ───────────────────────────
+    track.addEventListener('click', function (e) {
+      if (e.target === thumb) return;
+      var rect = track.getBoundingClientRect();
+      var frac = (e.clientX - rect.left) / track.offsetWidth;
+      scrollEl.scrollLeft = frac * (scrollEl.scrollWidth - scrollEl.clientWidth);
+    });
+  }
+
+  function init() {
+    document.querySelectorAll('.scroll-x').forEach(initScrollTrack);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
