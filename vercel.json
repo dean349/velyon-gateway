@@ -2,15 +2,23 @@
   "rewrites": [
     {
       "source": "/dealer-command-center/:path*",
-      "destination": "https://dealer-command-center-dean349s-projects.vercel.app/:path*"
+      "destination": "https://dealer-command-center-ag1cdfp74-dean349s-projects.vercel.app/:path*"
     },
     {
       "source": "/nossa-padel-brand-kit",
-      "destination": "https://nossa-padel-brand-kit.vercel.app"
+      "destination": "https://nossa-padel-brand-ai5gaz6v2-dean349s-projects.vercel.app"
     },
     {
       "source": "/nossa-padel-brand-kit/:path*",
-      "destination": "https://nossa-padel-brand-kit.vercel.app/:path*"
+      "destination": "https://nossa-padel-brand-ai5gaz6v2-dean349s-projects.vercel.app/:path*"
+    },
+    {
+      "source": "/nossa-padel-consulting-proposal",
+      "destination": "https://nossa-padel-consulting-proposal-qhmad1nb6-dean349s-projects.vercel.app"
+    },
+    {
+      "source": "/nossa-padel-consulting-proposal/:path*",
+      "destination": "https://nossa-padel-consulting-proposal-qhmad1nb6-dean349s-projects.vercel.app/:path*"
     }
   ]
 }
