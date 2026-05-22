@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/dealer-command-center/:path*",
-      "destination": "https://dealer-command-center-six.vercel.app/:path*"
+      "destination": "https://dealer-command-center-dean349s-projects.vercel.app/:path*"
     },
     {
       "source": "/nossa-padel-brand-kit",
